@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 type Props = {}
 
 const FavoritesQuotes = (props: Props) => {
-    const favQuotes = useSelector((state: any) => state.quote.favQuotes)
+    const favQuotes: string[] = useSelector((state: any) => state.quote.favQuotes)
     return (
         <section className='w-1/2'>
             {favQuotes.length > 0 ? (

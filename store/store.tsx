@@ -7,3 +7,5 @@ export const store = configureStore({
         quote: quoteSlice,
     },
 });
+
+export type RootState = ReturnType<typeof store.getState>;

@@ -6,8 +6,8 @@ type Props = {}
 
 const MyQuotes = (props: Props) => {
     const dispatch = useDispatch()
-    const [myQuote, setMyQuote] = useState('')
-    const myQuotes = useSelector((state: any) => state.quote.myQuotes)
+    const [myQuote, setMyQuote] = useState<string>('')
+    const myQuotes: string[] = useSelector((state: any) => state.quote.myQuotes)
     const handleMyQuote = (e: any) => {
         setMyQuote(e.target.value)
     }

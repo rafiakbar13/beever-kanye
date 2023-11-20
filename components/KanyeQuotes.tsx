@@ -15,14 +15,14 @@ const KanyeQuotes = (props: Props) => {
 
     const handleQuote = async () => {
         try {
-            const response = await axios.get(quoteApi)
-            setNewQuote(response.data.quote)
+            const response = await axios.get<{ quote: string }>(quoteApi);
+            setNewQuote(response.data.quote);
         } catch (error) {
             console.log(error);
         }
     }
 
-    const addFavQuotes = async () => {
+    const addFavQuotes = () => {
         if (favQuotes.includes(quote)) {
             toast.error('This quote is already in your favorites.');
         } else {
@@ -31,8 +31,8 @@ const KanyeQuotes = (props: Props) => {
     }
 
     const getQuote = async () => {
-        const response = await axios.get(quoteApi)
-        dispatch(setQuote(response.data.quote))
+        const response = await axios.get<{ quote: string }>(quoteApi);
+        dispatch(setQuote(response.data.quote));
     }
 
     useEffect(() => {
